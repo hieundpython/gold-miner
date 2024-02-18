@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://74gtmbt278km"]
+
+[ext_resource type="PackedScene" uid="uid://bslq4nst6elpx" path="res://player.tscn" id="1_uqpiv"]
+[ext_resource type="PackedScene" uid="uid://oma0c45v8tct" path="res://heart_gold.tscn" id="2_8stlj"]
+[ext_resource type="PackedScene" uid="uid://dqadnquj3qyky" path="res://heart_silver.tscn" id="3_vus3h"]
+[ext_resource type="PackedScene" uid="uid://cd3g76tdrpmwj" path="res://rock.tscn" id="4_da7k4"]
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_uqpiv")]
+
+[node name="HeartGold" parent="." instance=ExtResource("2_8stlj")]
+position = Vector2(286, 467)
+
+[node name="HeartSilver" parent="." instance=ExtResource("3_vus3h")]
+position = Vector2(894, 487)
+
+[node name="Rock" parent="." instance=ExtResource("4_da7k4")]
+position = Vector2(590, 345)

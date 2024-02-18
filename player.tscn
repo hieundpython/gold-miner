@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bslq4nst6elpx"]
+
+[ext_resource type="Texture2D" uid="uid://bfsxohhh1ngbk" path="res://icon.svg" id="1_v5et3"]
+[ext_resource type="Texture2D" uid="uid://c0ovegfyw7045" path="res://assert/player.png" id="2_wfpff"]
+[ext_resource type="Script" path="res://player.gd" id="3_0sni4"]
+[ext_resource type="Texture2D" uid="uid://cbb3tly2eejls" path="res://assert/anchor.png" id="3_om3kl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mf3co"]
+size = Vector2(66, 52)
+
+[node name="Player" type="Node"]
+script = ExtResource("3_0sni4")
+
+[node name="Middle" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wfpff")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_v5et3")
+texture_mode = 1
+
+[node name="Anchor" type="Area2D" parent="." groups=["anchor"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Anchor"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_om3kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mf3co")
+
+[connection signal="area_entered" from="Anchor" to="." method="_on_anchor_area_entered"]
