@@ -12,7 +12,9 @@ var go_to_left = true
 var middle_position = Vector2.ZERO
 var anchor_position = Vector2.ZERO
 
-var speed_pull = 3
+
+const default_pull = 25
+@export var speed_pull = default_pull
 
 func _ready():
 	screen_size = get_viewport().get_visible_rect().size
@@ -63,9 +65,10 @@ func change_position(delta):
 	if !screen_rect.has_point(Vector2(x, y)):
 		state = GO_UP
 		
-	var distance = sqrt((x - middle_position.x)*(x - middle_position.x) + (y - middle_position.y)*(y - middle_position.y))
+	var distance = (Vector2(x, y) - middle_position).length()
 
 	if state == GO_UP && (distance - radius < 0):
+		speed_pull = default_pull
 		if go_to_left:
 			state = ROTATION_LEFT
 		else:
@@ -87,7 +90,6 @@ func change_position(delta):
 
 func _on_anchor_area_entered(area):
 	state = GO_UP
-
 
 func update_speed(speed):
 	speed_pull = speed

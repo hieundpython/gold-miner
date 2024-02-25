@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://oma0c45v8tct"]
+[gd_scene load_steps=4 format=3 uid="uid://oma0c45v8tct"]
 
-[ext_resource type="Texture2D" uid="uid://bru0mqf53w4eq" path="res://assert/heart_gold.png" id="1_dwbd5"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_50573"]
+[ext_resource type="Texture2D" uid="uid://bru0mqf53w4eq" path="res://assert/heart_gold.png" id="2_3kpfn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7bsm"]
 radius = 130.3
 
 [node name="HeartGold" type="Area2D" groups=["heart_golds"]]
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_50573")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_dwbd5")
+texture = ExtResource("2_3kpfn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c7bsm")

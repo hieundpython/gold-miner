@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfsxohhh1ngbk" path="res://icon.svg" id="1_v5et3"]
 [ext_resource type="Texture2D" uid="uid://c0ovegfyw7045" path="res://assert/player.png" id="2_wfpff"]
-[ext_resource type="Script" path="res://player.gd" id="3_0sni4"]
+[ext_resource type="Script" path="res://player/player.gd" id="3_0sni4"]
 [ext_resource type="Texture2D" uid="uid://cbb3tly2eejls" path="res://assert/anchor.png" id="3_om3kl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mf3co"]

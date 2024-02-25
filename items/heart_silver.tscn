@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqadnquj3qyky"]
+[gd_scene load_steps=4 format=3 uid="uid://dqadnquj3qyky"]
 
-[ext_resource type="Texture2D" uid="uid://ix3444grbm86" path="res://assert/heart_silver.png" id="1_vvvit"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_ty82j"]
+[ext_resource type="Texture2D" uid="uid://ix3444grbm86" path="res://assert/heart_silver.png" id="2_hhw3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d15ia"]
 radius = 113.358
 
 [node name="HeartSilver" type="Area2D" groups=["heart_silvers"]]
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_ty82j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vvvit")
+texture = ExtResource("2_hhw3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d15ia")

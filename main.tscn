@@ -1,19 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://74gtmbt278km"]
+[gd_scene load_steps=8 format=3 uid="uid://74gtmbt278km"]
 
-[ext_resource type="PackedScene" uid="uid://bslq4nst6elpx" path="res://player.tscn" id="1_uqpiv"]
-[ext_resource type="PackedScene" uid="uid://oma0c45v8tct" path="res://heart_gold.tscn" id="2_8stlj"]
-[ext_resource type="PackedScene" uid="uid://dqadnquj3qyky" path="res://heart_silver.tscn" id="3_vus3h"]
-[ext_resource type="PackedScene" uid="uid://cd3g76tdrpmwj" path="res://rock.tscn" id="4_da7k4"]
+[ext_resource type="Script" path="res://main.gd" id="1_pxjgf"]
+[ext_resource type="PackedScene" uid="uid://bslq4nst6elpx" path="res://player/player.tscn" id="1_uqpiv"]
+[ext_resource type="PackedScene" uid="uid://oma0c45v8tct" path="res://items/heart_gold.tscn" id="2_8stlj"]
+[ext_resource type="PackedScene" uid="uid://dqadnquj3qyky" path="res://items/heart_silver.tscn" id="3_vus3h"]
+[ext_resource type="PackedScene" uid="uid://cd3g76tdrpmwj" path="res://items/rock.tscn" id="4_da7k4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eixm5"]
+font_size = 25
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fq4q2"]
+font_size = 25
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_pxjgf")
 
 [node name="Player" parent="." instance=ExtResource("1_uqpiv")]
 
 [node name="HeartGold" parent="." instance=ExtResource("2_8stlj")]
-position = Vector2(286, 467)
+position = Vector2(263, 397)
 
 [node name="HeartSilver" parent="." instance=ExtResource("3_vus3h")]
-position = Vector2(894, 487)
+position = Vector2(1064, 442)
 
 [node name="Rock" parent="." instance=ExtResource("4_da7k4")]
-position = Vector2(590, 345)
+position = Vector2(598, 614)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Total" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 62.0
+offset_right = 163.0
+offset_bottom = 97.0
+text = "Total: 0"
+label_settings = SubResource("LabelSettings_eixm5")
+
+[node name="Time" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1446.0
+offset_top = 57.0
+offset_right = 1533.0
+offset_bottom = 92.0
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_fq4q2")
+
+[node name="Timer" type="Timer" parent="UI"]
+autostart = true
